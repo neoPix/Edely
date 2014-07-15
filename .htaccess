@@ -1,0 +1,5 @@
+<IfModule mod_rewrite.c>
+	RewriteEngine on
+	RewriteRule    ^$ wwwdata/    [L]
+	RewriteRule    (.*) wwwdata/$1 [L]
+</IfModule>
