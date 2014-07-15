@@ -55,15 +55,22 @@
 				return $this->_daos[$key];
 			return null;
 		}
-		
-		public function checkAccess(){
+
+        /**
+         * Méthode de vérification des permissions
+         * @throws NotAllowedException
+         */
+        public function checkAccess(){
 			$access = false;
 			if(isset($this->acl[$this->action])){
-				foreach(Session::read('User.groups') as $group){
-					if(in_array($group, $this->acl[$this->action])){
-						$access = true;
-					}
-				}
+                $groups = Session::read('User.groups');
+                if(is_array($groups)){
+                    foreach($groups as $group){
+                        if(is_array($group) && in_array($group, $this->acl[$this->action])){
+                            $access = true;
+                        }
+                    }
+                }
 				if(!$access){
 					$access = in_array('all', $this->acl[$this->action]);
 				}

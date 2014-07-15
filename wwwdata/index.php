@@ -28,7 +28,7 @@
 	DEFINE('IMG', WWWDATA.'Img'.DS);
 	DEFINE('JS', WWWDATA.'Js'.DS);
 	DEFINE('CSS', WWWDATA.'Css'.DS);
-	
+
 	$apphost=str_replace('/',DS,$_SERVER['REQUEST_URI']);
 	while(strpos(APP, $apphost)===false)
 		$apphost = dirname($apphost);
@@ -40,7 +40,7 @@
 	DEFINE('HOST_IMG', HOST_APP.'Img/');
 	DEFINE('HOST_JS', HOST_APP.'Js/');
 	DEFINE('HOST_CSS', HOST_APP.'Css/');
-	
+
 	include LIB.'lib.php';
 
 	function logErrorHandler($errno, $errstr, $errfile, $errline, $errcontext)
@@ -62,5 +62,5 @@
 	
 	//error_reporting(Configure::read('error'));
 	if(Configure::read('error') == 0)set_error_handler('logErrorHandler');
-	
-	Rooter::process();
+
+	Router::process();

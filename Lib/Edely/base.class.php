@@ -4,8 +4,8 @@
 
 		public function useHelper($name){
 			if(!class_exists($name.'Helper')){
-				if(file_exists(HELPER.$name.'Helper.php'))
-					include HELPER.$name.'Helper.php';
+				if(file_exists(HELPER.strtolower($name).'Helper.php'))
+					include HELPER.strtolower($name).'Helper.php';
 				else throw new ServerErrorException(__('The Helper {name} does not exists.', array('name'=>$name)));
 			}
 			if(!isset($this->helpers[$name])){

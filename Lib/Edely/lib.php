@@ -7,7 +7,7 @@
 	include TOOLS.'Translator.class.php';
 	include TOOLS.'Configure.class.php';
 	include TOOLS.'Session.class.php';
-	include TOOLS.'Rooter.class.php';
+	include TOOLS.'Router.class.php';
 	include TOOLS.'Cache.class.php';
 	include TOOLS.'SqlConnection.class.php';
 	

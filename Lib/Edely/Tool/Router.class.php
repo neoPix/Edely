@@ -5,7 +5,7 @@
 	 * @creator: Balan David
 	 * @updated: 01/06/2013
 	**/
-	class Rooter{
+	class Router{
 		private static $_routes = array();
 		/**
 		 * Lis l'url et appelle le controlleur et l'action voulue
